@@ -136,7 +136,7 @@ namespace ThreatInputs {
     int getThreatFeature(Piece piece, Square from, Square to, Piece target, Color relativeSide, bool enemy, int sideOffset) {
         assert(piece != Piece::NONE);
 
-        int featureIndex;
+        int featureIndex = -1;
         switch (piece) {
         case Piece::PAWN:
             featureIndex = getPawnThreatFeature(from, to, target, relativeSide, enemy, sideOffset);
@@ -157,7 +157,6 @@ namespace ThreatInputs {
             featureIndex = getKingThreatFeature(from, to, target, relativeSide, sideOffset);
             break;
         case Piece::NONE:
-            featureIndex = -1;
             assert(false);
         }
 
